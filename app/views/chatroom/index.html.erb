@@ -1,0 +1,54 @@
+<h2 class="ui center aligned icon header">
+  <i class="circular users icon"></i>
+  YACA!
+</h2>
+<div class="ui two column grid centered   ">
+  <div class="ten wide column">
+    <div class="ui fluid card chatbox">
+      <div class="content" id='messages'>
+        <div class="ui feed" id='message-container' >
+
+          <%= render partial: 'message', collection: @messages %>
+
+        </div>
+      </div>
+      <div class="extra content">
+        <%= form_for Message.new, html: {class: 'ui reply form', role: 'form'}, url: message_path, remote: true do |f| %>
+        <div class="field">
+          <div class="ui fuild icon input">
+            <%= f.text_field :body  %>
+            <%= f.button '<i class="bordered teal inverted edit icon"></i>'.html_safe %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="four wide column ">
+    <div class="ui vertical menu">
+      <div class="ui fluid card chatbox">
+        <div class="content">
+          <a class="active teal item">
+            Inbox
+            <div class="ui teal left pointing label">1</div>
+          </a>
+          <a class="item">
+            Spam
+            <div class="ui label">51</div>
+          </a>
+          <a class="item">
+            Updates
+            <div class="ui label">1</div>
+          </a>
+          <div class="item">
+            <div class="ui transparent icon input">
+              <input type="text" placeholder="Search mail...">
+              <i class="search icon"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
