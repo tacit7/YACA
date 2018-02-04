@@ -23,7 +23,7 @@ gem 'turbolinks', '~> 5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -32,18 +32,20 @@ gem 'turbolinks', '~> 5'
 # gem 'capistrano-rails', group: :development
 
 gem 'semantic-ui-sass'
-gem 'jquery'
+gem 'jquery-rails'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   gem 'pry'
   gem 'pry-rails'
+  gem 'factory_bot_rails'
+  gem 'rspec-rails'
+  gem 'factory_bot', '!= 6.4.5'
 
 end
 
 group :development, :test do
-  gem 'rspec-rails'
 end
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
@@ -55,3 +57,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem "faker", "~> 2.22"
